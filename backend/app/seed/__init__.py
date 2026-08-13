@@ -1,0 +1,1 @@
+"""EduPulse seed package"""

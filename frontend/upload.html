@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduPulse - Score CSV Ingestion</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.setAttribute('data-theme', sessionStorage.getItem('edupulse-theme') || 'dark');</script>
+  <style>
+    .hero3d-wrap {
+      position: relative;
+      width: 100%;
+      height: 45vh;
+      min-height: 340px;
+      margin-bottom: var(--space-4);
+      overflow: hidden;
+    }
+    #upload3d {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    #upload3d canvas {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+    }
+    .hero3d-fade {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 80% 70% at 50% 50%, transparent 0%, transparent 25%, var(--color-paper) 72%);
+    }
+    .hero3d-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 var(--space-4);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="app-header">
+    <nav class="nav-pill" aria-label="Main Navigation">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/logo.svg" alt="EduPulse Logo" class="brand-logo-img"> edupulse
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="roster.html?source=mock" class="nav-item">Mock Cohort</a>
+        <a href="roster.html?source=csv" class="nav-item">CSV Roster</a>
+        <a href="upload.html" class="nav-item active">Upload CSV</a>
+        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="hero3d-wrap">
+    <div id="upload3d"></div>
+    <div class="hero3d-fade"></div>
+    <section class="hero3d-content">
+      <span class="mono-eyebrow">STRICT INGESTION ENGINE</span>
+      <h1>ingest score records</h1>
+      <p>Upload student score data in CSV format. Student profiles and records are automatically parsed and created from the CSV file.</p>
+    </section>
+  </div>
+
+  <main class="container" style="position: relative; z-index: 2;">
+    <div class="section-block" style="max-width: 740px; margin: 0 auto;">
+      <div id="dropzone" class="upload-dropzone">
+        <svg class="upload-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+        </svg>
+        <div>
+          <strong style="font-size: 1.15rem; display: block; color: var(--color-ink);">Drag & Drop Score CSV File Here</strong>
+          <span style="font-size: 0.88rem; color: var(--color-ink-muted);">or click anywhere in this box to select a file</span>
+        </div>
+        <input type="file" id="fileInput" accept=".csv" style="display: none;">
+        <div id="fileInfo" style="margin-top: var(--space-2); font-size: 0.95rem;"></div>
+      </div>
+
+      <div style="margin-top: var(--space-5); background: var(--color-paper-muted); padding: var(--space-4); border-radius: var(--radius-sm); border: 1px solid var(--color-border); font-size: 0.85rem; color: var(--color-ink-muted);">
+        <strong style="font-family: var(--font-mono); text-transform: uppercase; color: var(--color-indigo); display: block; margin-bottom: 4px;">CSV Schema Specification:</strong>
+        <code style="display: block; font-family: var(--font-mono); color: var(--color-purple); font-size: 0.9rem;">student_name, grade, subject, score, max_score, test_name, date</code>
+        <span style="display: block; margin-top: 4px; color: var(--color-ink-faint);">Supported Date Formats: <code>YYYY-MM-DD</code> or <code>DD/MM/YYYY</code></span>
+      </div>
+
+      <div style="margin-top: var(--space-6); text-align: right;">
+        <button id="uploadBtn" class="btn btn-primary" disabled>
+          Upload & Ingest Scores
+        </button>
+      </div>
+    </div>
+
+    <section id="resultContainer" style="max-width: 740px; margin: var(--space-8) auto 0;"></section>
+  </main>
+
+  <script src="vendor/three.min.js"></script>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="vendor/vanilla-tilt.min.js"></script>
+  <script type="module">
+    import { initUploadPage } from './js/upload.js';
+    import { initTheme } from './js/theme.js';
+    import { initMotionSystem } from './js/motion.js';
+
+    initTheme();
+    initMotionSystem();
+    initUploadPage();
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/upload3d.js"></script>
+</body>
+</html>

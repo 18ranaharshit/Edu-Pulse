@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduPulse - Diagnostic Insights</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.setAttribute('data-theme', sessionStorage.getItem('edupulse-theme') || 'dark');</script>
+  <style>
+    .hero3d-wrap {
+      position: relative;
+      width: 100%;
+      height: 42vh;
+      min-height: 320px;
+      margin-bottom: var(--space-4);
+      overflow: hidden;
+    }
+    #student3d {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+    #student3d canvas {
+      display: block;
+      width: 100% !important;
+      height: 100% !important;
+    }
+    .hero3d-fade {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 80% 70% at 50% 50%, transparent 0%, transparent 25%, var(--color-paper) 72%);
+    }
+    .hero3d-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 var(--space-4);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="app-header">
+    <nav class="nav-pill" aria-label="Main Navigation">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/images/logo.svg" alt="EduPulse Logo" class="brand-logo-img"> edupulse
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="nav-item">Home</a>
+        <a href="roster.html?source=mock" class="nav-item">Mock Cohort</a>
+        <a href="roster.html?source=csv" class="nav-item">CSV Roster</a>
+        <a href="upload.html" class="nav-item">Upload CSV</a>
+        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle theme">
+          <span class="theme-icon">🌙</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="hero3d-wrap">
+    <div id="student3d"></div>
+    <div class="hero3d-fade"></div>
+    <section class="hero3d-content" id="studentHeader">
+      <div class="spinner"></div>
+      <p>Retrieving diagnostic insights...</p>
+    </section>
+  </div>
+
+  <main class="container" style="position: relative; z-index: 2;">
+    <div class="dashboard-layout">
+      <section id="interventionBanner"></section>
+
+      <section id="nextBestActionSection"></section>
+
+      <section id="summarySection"></section>
+
+      <section id="weakTopicsSection"></section>
+
+      <section id="studyOptimizerSection"></section>
+
+      <section id="subjectsGridSection"></section>
+    </div>
+  </main>
+
+  <script src="vendor/three.min.js"></script>
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="vendor/vanilla-tilt.min.js"></script>
+  <script type="module">
+    import { initDashboard } from './js/dashboard.js';
+    import { initTheme } from './js/theme.js';
+    import { initMotionSystem } from './js/motion.js';
+
+    initTheme();
+    initMotionSystem();
+    initDashboard();
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="js/student3d.js"></script>
+</body>
+</html>
