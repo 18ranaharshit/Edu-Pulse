@@ -1,7 +1,7 @@
 <div align="center">
 
 <img src="frontend/assets/images/logo.svg" width="130" alt="EduPulse Logo" /><br />
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&custom_color_1=#4f46e5&custom_color_2=#7c3aed&height=180&section=header&text=EduPulse%202.0&fontSize=65&fontColor=ffffff&fontAlignY=35&animation=fadeIn" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=180&section=header&text=EduPulse%202.0&fontSize=65&fontColor=ffffff&fontAlignY=35&animation=fadeIn" width="100%" />
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Outfit&weight=700&size=24&pause=1000&color=4F46E5&center=true&width=700&lines=Continuous+Academic+Health+Monitor;Next+Best+Action+%2B+What-If+Simulator;Three.js+3D+Visuals+%2B+GSAP+Motion+System;No+LLM+Dependencies+%C2%B7+100%25+Offline+Capable)](https://git.io/typing-svg)
 
@@ -60,7 +60,7 @@ EduPulse delivers a seamless diagnostic workflow from data ingestion to actionab
   *<sub>Diagnostic Profile — Early intervention warning banners, Next Best Action recommendation card, and cluster profile tag</sub>*
 </div>
 
-<img src="https://raw.githubusercontent.com/andreasbm/rainbow.png" width="100%" />
+<img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" />
 
 ## ✨ Core Capability Layer
 
@@ -151,8 +151,6 @@ python -m http.server 3000
 
 Made with ❤️ for students, teachers, and data-driven learning.
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&custom_color_1=#4f46e5&custom_color_2=#7c3aed&height=100&section=footer" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=100&section=footer" width="100%" />
 
-</div>
-#   E d u - P u l s e  
- 
+</div>
