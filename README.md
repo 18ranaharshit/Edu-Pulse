@@ -1,7 +1,7 @@
 <div align="center">
 
 <img src="frontend/assets/images/logo.svg" width="130" alt="EduPulse Logo" /><br />
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=180&section=header&text=EduPulse%202.0&fontSize=65&fontColor=ffffff&fontAlignY=35&animation=fadeIn" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=180&section=header&text=EduPulse&fontSize=65&fontColor=ffffff&fontAlignY=35&animation=fadeIn" width="100%" />
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Outfit&weight=700&size=24&pause=1000&color=4F46E5&center=true&width=700&lines=Continuous+Academic+Health+Monitor;Next+Best+Action+%2B+What-If+Simulator;Three.js+3D+Visuals+%2B+GSAP+Motion+System;No+LLM+Dependencies+%C2%B7+100%25+Offline+Capable)](https://git.io/typing-svg)
 
@@ -18,9 +18,9 @@
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" width="100%" />
 
-## 🎯 About EduPulse 2.0
+## 🎯 About EduPulse
 
-**EduPulse 2.0** is an academic diagnostic and recommendation platform built to replace static one-time report cards with a continuous, data-driven read on student performance. Instead of relying on opaque LLM APIs or expensive cloud services, EduPulse uses a **deterministic rules engine** paired with **explainable machine learning (`scikit-learn`)**, **interactive Three.js 3D data visualizations**, and **GSAP motion systems**.
+**EduPulse** is an academic diagnostic and recommendation platform built to replace static one-time report cards with a continuous, data-driven read on student performance. Instead of relying on opaque LLM APIs or expensive cloud services, EduPulse uses a **deterministic rules engine** paired with **explainable machine learning (`scikit-learn`)**, **interactive Three.js 3D data visualizations**, and **GSAP motion systems**.
 
 > [!NOTE]
 > **Zero API Keys Required & 100% Self-Hosted Assets:** EduPulse runs completely offline without third-party CDN dependencies. All 3D rendering engines (Three.js), motion libraries (GSAP), and ML models run locally or in self-contained deployment environments.
@@ -28,7 +28,7 @@
 <div align="center">
   <img src="frontend/assets/images/home_page.png" width="90%" alt="EduPulse Home Landing Screen" />
   <br />
-  *<sub>EduPulse 2.0 Home Screen — Interactive Three.js WebGL constellation hero with mouse-parallax and dark mode toggle</sub>*
+  *<sub>EduPulse Home Screen — Interactive Three.js WebGL constellation hero with mouse-parallax and dark mode toggle</sub>*
   <br /><br />
   <img src="frontend/assets/images/student_roster.png" width="90%" alt="Mock Data Student Roster Screen" />
   <br />
